@@ -55,6 +55,8 @@ if has('persistent_undo')
   set undodir=~/.vim/backups
   set undofile
 endif
+" Lets place the yank ring history somewhere else.
+let g:yankring_history_dir = "~/.vim/backups"
 
 " ================ Indentation ======================
 
