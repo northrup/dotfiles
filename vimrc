@@ -11,6 +11,7 @@ endif
 " ================ General Config ====================
 
 " set number                      "Line numbers are good
+set title                       "Change the Terminals Title
 set relativenumber
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
@@ -28,6 +29,7 @@ set hidden
 "turn on syntax highlighting
 syntax on
 
+set showmatch                   "Show matching parenthesis
 " Change leader to a comma because the backslash is too far away
 " That means all \x commands turn into ,x
 " The mapleader has to be set before vundle starts loading all 
@@ -55,18 +57,18 @@ if has('persistent_undo')
   set undodir=~/.vim/backups
   set undofile
 endif
-" Lets place the yank ring history somewhere else.
-let g:yankring_history_dir = "~/.vim/backups"
 
 " ================ Indentation ======================
 
 set autoindent
+set copyindent                  "Copy the previous indentation on autoindenting
 set smartindent
 set smarttab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 set expandtab
+set shiftround                  "Use multiple of shiftwidth when indenting with '<' and '>'
 
 filetype plugin on
 filetype indent on
