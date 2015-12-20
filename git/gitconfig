@@ -14,6 +14,7 @@
 [alias]
   # add
   a = add                           # add
+  aa = add -A                       # add all files
   chunkyadd = add --patch           # stage commits chunk by chunk
 
   # via http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
@@ -107,10 +108,10 @@
 [push]
   # 'git push' will push the current branch to its tracking branch
   # the usual default is to push all branches
-  default = upstream
+  default = matching
 [core]
   autocrlf = false
-  editor = vim
+  editor = subl
   excludesfile = ~/.yadr/git/gitignore
 [advice]
   statusHints = false
@@ -128,3 +129,7 @@
 [user]
 	name = John Northrup
 	email = john@8bitwizard.net
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
