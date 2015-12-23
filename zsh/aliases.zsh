@@ -21,7 +21,7 @@ alias yip='yadr init-plugins'
 
 # PS
 alias psa="ps aux"
-alias psg="ps aux | grep "
+alias psg="ps aux | grep -i"
 alias psr='ps aux | grep ruby'
 
 # Moving around
