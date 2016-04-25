@@ -8,9 +8,16 @@
   remote = green
 [color "diff"]
   meta = yellow bold
+  commit = green bold
   frag = magenta bold
-  old = red
-  new = green
+  old = red bold
+  new = green bold
+  whitespace = red reverse
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = "red bold 52"
+  newNormal = "green bold"
+  newHighlight = "green bold 22"
 [alias]
   # add
   a = add                           # add
@@ -42,6 +49,7 @@
   cp = cherry-pick -x               # grab a change from a branch
 
   # diff
+  dsf = "!f() { [ \"$GIT_PREFIX\" != \"\" ] && cd "$GIT_PREFIX"; git diff --color $@ | diff-so-fancy | less --tabs=4 -RFX; }; f"
   d = diff                          # diff unstaged changes
   dc = diff --cached                # diff staged changes
   last = diff HEAD^                 # diff last committed change
@@ -129,7 +137,15 @@
 [user]
 	name = John Northrup
 	email = john@8bitwizard.net
+	signingkey = 75A7F21E680859FF
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[commit]
+	gpgsign = true
+[gui]
+    recentrepo = /Users/jjn/Code/BikeShed/dashboards-bnagh
+[pager]
+    diff = "diff-so-fancy | less --tabs=4 -RFX"
+    show = "diff-so-fancy | less --tabs=4 -RFX"
